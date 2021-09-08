@@ -24,6 +24,7 @@ rectangle0 = M5Rect(132, 105, 30, 30, 0xFFFFFF, 0xFFFFFF)
 def buttonA_wasPressed():
   global stop
   if stop == True:
+    timerSch.run('timer1', 100, 0x00)
     stop = False
   else:
     timerSch.stop('timer1')
@@ -32,6 +33,7 @@ def buttonA_wasPressed():
     label1.hide()
     label2.hide()
     label3.hide()
+    title0.setTitle('END')
   pass
 btnA.wasPressed(buttonA_wasPressed)
 
@@ -42,7 +44,6 @@ def ttimer1():
   label1.show()
   label2.show()
   label3.show()
-  title0.setFgColor(0x33cc00)
   title0.setTitle(str((str(((str('Time : ') + str((gps.gps_time))))) + str(((str('  PQ : ') + str((gps.pos_quality))))))))
   label0.setText(str((str('Y : ') + str((imu0.acceleration[1])))))
   label1.setText(str((str('Roll : ') + str((imu0.ypr[2])))))
