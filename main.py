@@ -47,8 +47,11 @@ def ttimer1():
   title0.setTitle(str((str(((str('Time : ') + str((gps.gps_time))))) + str(((str('  PQ : ') + str((gps.pos_quality))))))))
   label0.setText(str((str('Y : ') + str((imu0.acceleration[1])))))
   label1.setText(str((str('Roll : ') + str((imu0.ypr[2])))))
-  label2.setText(str((str('Lon : ') + str((gps.longitude)))))
-  label3.setText(str((str('Lat : ') + str((gps.latitude)))))
+  # 緯度
+  #
+  label2.setText(str((str('Lat : ') + str((gps.latitude)))))
+  # 経度
+  label3.setText(str((str('Lon : ') + str((gps.longitude)))))
   pass
 
 
